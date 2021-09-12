@@ -9,7 +9,7 @@ class Manager:
         self.mapping = tuple(deque() for _ in range(buckets_n))
 
     @lru_cache()
-    def hash_it(self, text):
+    def poli_hash(self, text):
         p = 1000000007
         x = 263
 
@@ -19,12 +19,12 @@ class Manager:
         return r % p % self.buckets_n
 
     def add(self, value):
-        hash_result = self.hash_it(value)
+        hash_result = self.poli_hash(value)
         if value not in self.mapping[hash_result]:
             self.mapping[hash_result].appendleft(value)
 
     def delete(self, value):
-        hash_result = self.hash_it(value)
+        hash_result = self.poli_hash(value)
         try:
             index = self.mapping[hash_result].index(value)
             del self.mapping[hash_result][index]
@@ -32,7 +32,7 @@ class Manager:
             pass
 
     def find(self, value):
-        hash_result = self.hash_it(value)
+        hash_result = self.poli_hash(value)
         try:
             self.mapping[hash_result].index(value)
             return 'yes'
