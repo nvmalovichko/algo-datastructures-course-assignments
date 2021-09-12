@@ -12,10 +12,6 @@ def poli_hash(text):
     return r % prime_n
 
 
-def are_equal(p, s):
-    return p == s
-
-
 def find(pattern, text):
     t_len = len(text)
     p_len = len(pattern)
