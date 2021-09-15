@@ -5,4 +5,4 @@ C[X]W[Y]A[Z] translation:
 
 * C[X] - course number X;
 * W[Y] - week number Y;
-* A[Y] - assignment number Z;
+* A[Z] - assignment number Z;
